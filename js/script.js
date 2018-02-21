@@ -17,8 +17,8 @@ var hoverCard = {
         return target.children[0].style.transform = 'rotateY(' + rx + 'deg)' + ' ' + 'rotateX(' + ry + 'deg)';
     },
     cardBgTransform: function (target) {
-        var bx = this.postionX() * -40;
-        var by = this.positionY() * -40;
+        var bx = this.postionX() * -50;
+        var by = this.positionY() * -50;
         return target.children[0].children[0].style.backgroundPosition = bx + 'px' + ' ' + by + 'px';
     },
     handleEnter: function (target, e) {
@@ -26,6 +26,7 @@ var hoverCard = {
         this.height = target.clientHeight;
         this.startX=e.pageX;
         this.startY=e.pageY;
+        target.children[0].classList.add('hover');
     },
     handleMove: function (target, e) {
         if(Math.abs(this.startX-e.pageX)>50){
@@ -40,6 +41,7 @@ var hoverCard = {
         this.mouseX = 0;
         this.mouseY = 0;
         target.children[0].classList.add('ani');
+        target.children[0].classList.remove('hover');
         this.cardTransform(target);
         this.cardBgTransform(target);
     },
