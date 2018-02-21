@@ -13,27 +13,7 @@ body {
 }
 
 body {
-    background-color: #17b3a4;
-}
-
-input::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: rgba(255, 255, 255, 0.5);
-}
-
-input::-moz-placeholder {
-    /* Firefox 19+ */
-    color: rgba(255, 255, 255, 0.5);
-}
-
-input:-ms-input-placeholder {
-    /* IE 10+ */
-    color: rgba(255, 255, 255, 0.5);
-}
-
-input:-moz-placeholder {
-    /* Firefox 18- */
-    color: rgba(255, 255, 255, 0.5);
+    background-color: #f1f1f1;
 }
 
 .title {
@@ -86,5 +66,75 @@ input:-moz-placeholder {
     }
     100% {
         stroke-dashoffset: 70;
+    }
+}
+
+/* hover card style */
+
+.card-box-wrap {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.card-box {
+    margin: 10px;
+    -webkit-transform: perspective(1000px);
+    transform: perspective(1000px);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    min-width: 300px;
+    max-width: 380px;
+    flex: 1;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0px 20px 40px 10px rgba(0, 0, 0, 0.3);
+}
+.card.ani{
+    transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card .bg {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+    transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0.7;
+}
+
+
+.card .info {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.card .info h1 {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+    .card-box {
+        width: 100%;
+        min-width: 100%;
     }
 }

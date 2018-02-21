@@ -3,14 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="stylesheet" href="css/style.css">
     <title>svg-animation-search</title>
 </head>
 
 <body>
-    
+    <div class="card-box-wrap">
+        <div class="card-box" 
+        ontouchstart="hoverCard.touchEnter(this,event)"
+        ontouchmove="hoverCard.touchMove(this,event)"
+        ontouchend="hoverCard.touchEnd(this,event)"
+
+        onmouseenter="hoverCard.handleEnter(this,event)" 
+        onmousemove="hoverCard.handleMove(this,event)" 
+        onmouseleave="hoverCard.handleLeave(this)">
+            <div class="card ani">
+                <div class="bg" style="background-image:url('images/space01.png')"></div>
+                <div class="info">
+                    <h1>SPACE CARD</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card-box" 
+        ontouchstart="hoverCard.touchEnter(this,event)"
+        ontouchmove="hoverCard.touchMove(this,event)"
+        ontouchend="hoverCard.touchEnd(this,event)"
+
+        onmouseenter="hoverCard.handleEnter(this,event)" 
+        onmousemove="hoverCard.handleMove(this,event)" 
+        onmouseleave="hoverCard.handleLeave(this)">
+            <div class="card ani">
+                <div class="bg" style="background-image:url('images/space03.png')"></div>
+                <div class="info">
+                    <h1>SPACE CARD</h1>
+                </div>
+            </div>
+        </div>
+        <div class="card-box" 
+        ontouchstart="hoverCard.touchEnter(this,event)"
+        ontouchmove="hoverCard.touchMove(this,event)"
+        ontouchend="hoverCard.touchEnd(this,event)"
+
+        onmouseenter="hoverCard.handleEnter(this,event)" 
+        onmousemove="hoverCard.handleMove(this,event)" 
+        onmouseleave="hoverCard.handleLeave(this)">
+            <div class="card ani">
+                <div class="bg" style="background-image:url('images/space04.png')"></div>
+                <div class="info">
+                    <h1>SPACE CARD</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
 </body>
 
 
