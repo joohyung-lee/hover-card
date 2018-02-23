@@ -15,19 +15,22 @@ body {
 }
 
 body {
-    background-color: #f1f1f1;
+    background: #928596;
 }
 
 .title {
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 50px;
+    margin: 50px 0 0;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title span {
     display: inline-block;
-    color: #fff;
+    color: #5c525f;
     vertical-align: middle;
     opacity: 0.7;
     font-style: italic;
@@ -55,7 +58,7 @@ body {
 
 .logo-svg {
     fill: none;
-    stroke: #fff;
+    stroke: #5c525f;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -76,13 +79,13 @@ body {
 .card-box-wrap {
     text-align: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0px auto 0;
     font-size: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 30px;
+    padding: 30px 30px 0;
 }
 
 .card-box {
@@ -93,7 +96,6 @@ body {
     transform-style: preserve-3d;
     min-width: 300px;
     max-width: 380px;
-    flex: 1;
 }
 
 .card {
@@ -102,11 +104,28 @@ body {
     height: 350px;
     overflow: hidden;
     background-color: #000;
-    box-shadow: 0px 20px 40px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 15px 0px rgba(48, 54, 62, 0.7);
+    border-radius: 10px;
 }
+.card.hover{
+    transition:box-shadow 0.5s;
+}
+.card-box .card.hover{
+    z-index:10;
+    box-shadow: 0px 20px 40px 10px rgba(48, 54, 62, 0.8);
+}
+
 .card.ani{
     transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     -webkit-transition: 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card.ani .bg{
+    transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1),opacity 0.5s;
+    -webkit-transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1),opacity 0.5s;
+}
+
+.card.hover .bg{
+    opacity: 1;
 }
 .card .bg {
     position: absolute;
@@ -117,26 +136,34 @@ body {
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
-    transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    -webkit-transition: background-position 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     opacity: 0.7;
+    transition:opacity 0.3s;
 }
 
 
 .card .info {
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20PX;
+    right: 20PX;
+    transition:all 0.4s ease-out;
 }
-
+.card.hover .info{
+    text-shadow:rgba(0, 0, 0, 0.5) 0 5px 10px
+}
 .card .info h1 {
     display: inline-block;
     color: #fff;
     font-size: 20px;
+    font-weight: normal;
 }
 @media screen and (max-width: 768px) {
     .card-box {
         width: 100%;
         min-width: 100%;
+
+    }
+    .card-box-wrap{
+        margin:10px auto 0;
+        padding:0 50px;
     }
 }
